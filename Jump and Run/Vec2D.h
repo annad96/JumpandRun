@@ -10,7 +10,7 @@ public:
     int x;
     int y;
 
-    //friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs);
+    friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs);
     Vec2D& operator-=(const Vec2D& other) 
     {
         x -= other.x;
@@ -18,7 +18,7 @@ public:
         return *this;
     }
 
-    //friend Vec2D operator+(const Vec2D& lhs, const Vec2D& rhs);
+    friend Vec2D operator+(const Vec2D& lhs, const Vec2D& rhs);
     Vec2D& operator+=(const Vec2D& other)
     {
         x += other.x;
