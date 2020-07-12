@@ -37,6 +37,11 @@ void Game::update(float dt)
             GameObject* obj = _obstacles[i];
             obj->update(dt);
             // A3: Wenn das Hindernis verschwunden ist, erzeuge ein neues
+            if (!obj->isInsideFrame())
+            {
+                delete _obstacles[i];
+                _newObstacle;
+            }
         }
         _floor->update(dt);
         _player->update(dt);
@@ -115,7 +120,7 @@ GameObject* Game::_newObstacle()
     if (x < _camera.right()) x = _camera.right() + 1;
     int width = 2;
     _lastObstacleX = x + width;
-    return BoxObstacle(this, x, _floor->top() - 3, width, 3);
+    return new BoxObstacle(this, x, _floor->top() - 3, width, 3);
 }
 
 void Game::_reset()
