@@ -1,5 +1,6 @@
 #ifndef VEC2D_H
 #define VEC2D_H
+#include <cmath>
 
 class Vec2D
 {
@@ -10,15 +11,28 @@ public:
     int x;
     int y;
 
-    friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs);
-    Vec2D& operator-=(const Vec2D& other) 
+    friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs)
+    {
+        Vec2D hs;
+        hs.x = lhs.x - rhs.x;
+        hs.y = lhs.y - rhs.y;
+        return hs;
+    }
+
+    Vec2D& operator-=(const Vec2D& other)
     {
         x -= other.x;
         y -= other.y;
         return *this;
     }
 
-    friend Vec2D operator+(const Vec2D& lhs, const Vec2D& rhs);
+    friend Vec2D operator+(const Vec2D& lhs, const Vec2D& rhs)
+    {
+        Vec2D hs;
+            hs.x = lhs.x + rhs.x;
+            hs.y = lhs.y + rhs.y;
+        return hs;
+    }
     Vec2D& operator+=(const Vec2D& other)
     {
         x += other.x;

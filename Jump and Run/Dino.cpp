@@ -32,7 +32,7 @@ void Dino::draw(Terminal& term, const Rectangle& camera)
 {
 	GameObject::draw(term, camera);
 
-	Vec2D screenCoords = (upperLeft(), camera.upperLeft());
+	Vec2D screenCoords = upperLeft() - camera.upperLeft();
 	term.draw_text(screenCoords.x, screenCoords.y, "  xx");
 	term.draw_text(screenCoords.x, screenCoords.y+1, " xx ");
 	term.draw_text(screenCoords.x, screenCoords.y+2, "x x ");

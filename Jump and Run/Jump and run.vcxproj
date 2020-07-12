@@ -25,6 +25,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Terminal.cpp" />
+    <ClCompile Include="Vec2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dino.h" />
