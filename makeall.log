@@ -1,0 +1,171 @@
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Floor.h:4,
+                 from JumpandRun/Floor.cpp:1:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Floor.cpp: In member function ‘virtual void Floor::draw(Terminal&, const Rectangle&)’:
+JumpandRun/Floor.cpp:12:35: error: ambiguous overload for ‘operator-’ (operand types are ‘Vec2D’ and ‘Vec2D’)
+  Vec2D screenCoords = upperLeft() - camera.upperLeft();
+                       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Floor.h:4,
+                 from JumpandRun/Floor.cpp:1:
+JumpandRun/Vec2D.h:46:14: note: candidate: Vec2D operator-(Vec2D, const Vec2D&)
+ inline Vec2D operator-(Vec2D lhs, const Vec2D& rhs)
+              ^~~~~~~~
+JumpandRun/Vec2D.h:14:18: note: candidate: Vec2D operator-(const Vec2D&, const Vec2D&)
+     friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs)
+                  ^~~~~~~~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Dino.h:4,
+                 from JumpandRun/Dino.cpp:1:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+In file included from JumpandRun/Dino.cpp:1:0:
+JumpandRun/Dino.h: In constructor ‘Dino::Dino(Game*, int, int, int, int)’:
+JumpandRun/Dino.h:22:7: warning: ‘Dino::_isDead’ will be initialized after [-Wreorder]
+  bool _isDead;
+       ^~~~~~~
+JumpandRun/Dino.h:20:7: warning:   ‘bool Dino::_isJumping’ [-Wreorder]
+  bool _isJumping;
+       ^~~~~~~~~~
+JumpandRun/Dino.cpp:4:1: warning:   when initialized here [-Wreorder]
+ Dino::Dino(Game* game, int x, int y, int width, int height)
+ ^~~~
+JumpandRun/Dino.cpp: In member function ‘virtual void Dino::draw(Terminal&, const Rectangle&)’:
+JumpandRun/Dino.cpp:35:35: error: ambiguous overload for ‘operator-’ (operand types are ‘Vec2D’ and ‘Vec2D’)
+  Vec2D screenCoords = upperLeft() - camera.upperLeft();
+                       ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Dino.h:4,
+                 from JumpandRun/Dino.cpp:1:
+JumpandRun/Vec2D.h:46:14: note: candidate: Vec2D operator-(Vec2D, const Vec2D&)
+ inline Vec2D operator-(Vec2D lhs, const Vec2D& rhs)
+              ^~~~~~~~
+JumpandRun/Vec2D.h:14:18: note: candidate: Vec2D operator-(const Vec2D&, const Vec2D&)
+     friend Vec2D operator-(const Vec2D& lhs, const Vec2D& rhs)
+                  ^~~~~~~~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Game.h:7,
+                 from JumpandRun/Game.cpp:2:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Game.cpp: In member function ‘void Game::update(float)’:
+JumpandRun/Game.cpp:42:36: warning: deleting object of polymorphic class type ‘GameObject’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+                 delete _obstacles[i];
+                                    ^
+JumpandRun/Game.cpp:43:17: error: invalid use of non-static member function ‘GameObject* Game::_newObstacle()’
+                 _newObstacle;
+                 ^~~~~~~~~~~~
+In file included from JumpandRun/Game.cpp:2:0:
+JumpandRun/Game.h:39:17: note: declared here
+     GameObject* _newObstacle();
+                 ^~~~~~~~~~~~
+JumpandRun/Game.cpp: In member function ‘void Game::draw()’:
+JumpandRun/Game.cpp:65:9: error: expected ‘(’ before ‘each’
+     for each (GameObject * obj in _obstacles)
+         ^~~~
+JumpandRun/Game.cpp:65:26: error: expected primary-expression before ‘*’ token
+     for each (GameObject * obj in _obstacles)
+                          ^
+JumpandRun/Game.cpp:65:28: error: ‘obj’ was not declared in this scope
+     for each (GameObject * obj in _obstacles)
+                            ^~~
+JumpandRun/Game.cpp:65:9: error: ‘each’ was not declared in this scope
+     for each (GameObject * obj in _obstacles)
+         ^~~~
+JumpandRun/Game.cpp:65:9: note: suggested alternative: ‘tanh’
+     for each (GameObject * obj in _obstacles)
+         ^~~~
+         tanh
+JumpandRun/Game.cpp:69:17: error: could not convert ‘((Game*)this)->Game::_floor->GameObject::draw(((Game*)this)->Game::_term, ((Game*)this)->Game::_camera)’ from ‘void’ to ‘bool’
+     _floor->draw(_term, _camera);
+     ~~~~~~~~~~~~^~~~~~~~~~~~~~~~
+JumpandRun/Game.cpp:70:34: error: expected ‘)’ before ‘;’ token
+     _player->draw(_term, _camera);
+                                  ^
+JumpandRun/Game.cpp: In member function ‘GameObject* Game::_newObstacle()’:
+JumpandRun/Game.cpp:123:64: error: no matching function for call to ‘BoxObstacle::BoxObstacle(Game*, int&, int, int&, int)’
+     return new BoxObstacle(this, x, _floor->top() - 3, width, 3);
+                                                                ^
+In file included from JumpandRun/Game.h:10:0,
+                 from JumpandRun/Game.cpp:2:
+JumpandRun/BoxObstacle.h:7:7: note: candidate: BoxObstacle::BoxObstacle()
+ class BoxObstacle : public Rectangle {
+       ^~~~~~~~~~~
+JumpandRun/BoxObstacle.h:7:7: note:   candidate expects 0 arguments, 5 provided
+JumpandRun/BoxObstacle.h:7:7: note: candidate: constexpr BoxObstacle::BoxObstacle(const BoxObstacle&)
+JumpandRun/BoxObstacle.h:7:7: note:   candidate expects 1 argument, 5 provided
+JumpandRun/BoxObstacle.h:7:7: note: candidate: constexpr BoxObstacle::BoxObstacle(BoxObstacle&&)
+JumpandRun/BoxObstacle.h:7:7: note:   candidate expects 1 argument, 5 provided
+JumpandRun/Game.cpp: In member function ‘void Game::_releaseResources()’:
+JumpandRun/Game.cpp:156:28: warning: deleting object of polymorphic class type ‘GameObject’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+         delete _obstacles[i];
+                            ^
+JumpandRun/Game.cpp:158:12: warning: deleting object of polymorphic class type ‘GameObject’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+     delete _floor;
+            ^~~~~~
+JumpandRun/Game.cpp:159:12: warning: deleting object of polymorphic class type ‘Dino’ which has non-virtual destructor might cause undefined behavior [-Wdelete-non-virtual-dtor]
+     delete _player;
+            ^~~~~~~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/Rectangle.cpp:1:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/BoxObstacle.h:4,
+                 from JumpandRun/BoxObstacle.cpp:2:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/BoxObstacle.cpp: At global scope:
+JumpandRun/BoxObstacle.cpp:5:25: error: expected constructor, destructor, or type conversion before ‘(’ token
+ BoxObstacle::BoxObstacle(upperLeft, width, width, height, height)
+                         ^
+In file included from JumpandRun/Rectangle.h:4:0,
+                 from JumpandRun/GameObject.h:4,
+                 from JumpandRun/Game.h:7,
+                 from JumpandRun/main.cpp:3:
+JumpandRun/Vec2D.h: In function ‘Vec2D operator-(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:16:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+JumpandRun/Vec2D.h: In function ‘Vec2D operator+(const Vec2D&, const Vec2D&)’:
+JumpandRun/Vec2D.h:31:16: error: ‘hs’ declared as reference but not initialized
+         Vec2D& hs;
+                ^~
+make: *** [jumpandrun] Error 1
